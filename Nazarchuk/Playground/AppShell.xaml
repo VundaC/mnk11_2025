@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     xmlns:pages="clr-namespace:Playground.Pages"
+    xmlns:local="clr-namespace:Playground"
     Shell.FlyoutBehavior="Flyout"
     Title="Playground">
 
@@ -25,7 +26,12 @@
         Icon="{StaticResource IconMeta}"
         ContentTemplate="{DataTemplate pages:ManageMetaPage}"
         Route="manage" />
-
+    
+    <ShellContent 
+        Title="XamlTest"
+        ContentTemplate="{DataTemplate local:XamlPlusCodePage}"
+        Route="XamlPlusCodePage"/>
+    
     <Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
