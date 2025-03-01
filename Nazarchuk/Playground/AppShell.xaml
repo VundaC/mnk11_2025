@@ -31,7 +31,11 @@
         Title="XamlTest"
         ContentTemplate="{DataTemplate local:XamlPlusCodePage}"
         Route="XamlPlusCodePage"/>
-    
+    <ShellContent 
+        Title="SliderTransforms"
+        ContentTemplate="{DataTemplate local:SliderTransformsPage}"
+        Route="SliderTransformsPage"/>
+
     <Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
