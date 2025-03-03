@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Practice.Services;
 
 namespace Practice;
 
@@ -14,11 +15,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-
+		builder.Services
+			.AddServices();
+		
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
 		return builder.Build();
 	}
 }
