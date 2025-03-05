@@ -40,7 +40,7 @@
             <Label x:Name="base64EncodedImage"
                    FontSize="18"
                    HorizontalOptions="Center" />
-            <Image Source="dotnet_bot.png"
+            <Image Source="https://aka.ms/campus.jpg"
                    HeightRequest="185"
                    Aspect="AspectFit"
                    SemanticProperties.Description="dot net bot in a hovercraft number nine" />
