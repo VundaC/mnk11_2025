@@ -4,8 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:Practice.Views"
-             mc:Ignorable="d">
+             xmlns:local="clr-namespace:Practice.Views.Me"
+             mc:Ignorable="d"
+             x:DataType="local:MePageViewModel">
     <ContentPage.Content>
         <Grid HorizontalOptions="Center"
               VerticalOptions="Center">
@@ -23,7 +24,7 @@
                    TextColor="Purple" />
             <Label Grid.Row="0"
                    Grid.Column="1"
-                   Text="{Binding Name}"
+                   Text="{Binding FirstName}"
                    TextColor="Purple" />
             <Label Grid.Row="1"
                    Grid.Column="0"
@@ -34,5 +35,8 @@
                    Text="{Binding LastName}"
                    TextColor="Purple" />
         </Grid>
+        <StackLayout>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

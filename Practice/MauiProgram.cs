@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Practice.Services;
+using Practice.Views.Me;
 
 namespace Practice;
 
@@ -17,9 +18,10 @@ public static class MauiProgram
 			});
 		builder.Services
 			.AddServices();
-		
+		builder.Services.AddSingleton<MePageViewModel>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 		return builder.Build();
 	}
