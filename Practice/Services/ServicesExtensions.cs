@@ -1,14 +1,15 @@
-using Practice.Interfaces;
-using Practice.Services.Implementations;
+using Microsoft.Extensions.DependencyInjection;
+using Practice.Services.Implementation;
+using Practice.Services.Interfaces;
 
 namespace Practice.Services;
 
 public static class ServicesExtensions
 {
-    public static IServiceCollection AddServices(this IServiceCollection services)
+    public static IServiceCollection AddPracticeServices(this IServiceCollection services)
     {
-        return services
-            .AddSingleton<INavigationService, NavigationService>()
-            .AddSingleton<IDialogService, DialogService>();
+        services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<IDialogService, DialogService>();
+        return services;
     }
 }

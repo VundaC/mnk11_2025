@@ -1,11 +1,13 @@
-using Practice.Interfaces;
+using Practice.Services.Interfaces;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Practice.Services.Implementations;
+namespace Practice.Services.Implementation;
 
 public class NavigationService : INavigationService
 {
-    public Task NavigateAsync(string route, CancellationToken cancellationToken = default)
+    public async Task NavigateAsync(string route, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        await Shell.Current.GoToAsync(route, true);
     }
 }
