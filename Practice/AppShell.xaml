@@ -14,10 +14,10 @@
                               ContentTemplate="{DataTemplate local:MainPage}"
                               Route="OnePage" />
             </Tab>
-            <Tab Title="Two">
-                <ShellContent Title="Two"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="TwoPage" />
+            <Tab Title="Me">
+                <ShellContent Title="Me"
+                              ContentTemplate="{DataTemplate views:MePage}"
+                              Route="MePage" />
             </Tab>
             <Tab Title="Settings">
                 <ShellContent Title="Settings"

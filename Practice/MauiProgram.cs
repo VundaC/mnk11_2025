@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Practice.Services;
+﻿using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
 
@@ -19,9 +18,12 @@ public static class MauiProgram
             });
 
         builder.Services.AddServices();
-        builder.Services.AddTransient<SettingsPage>(); 
-        builder.Services.AddTransient<SettingsPageViewModel>(); 
-        
+
+        builder.Services
+            .AddSingleton<MePageViewModel>()
+            .AddSingleton<MePage>()
+            .AddTransient<SettingsPage>()
+            .AddTransient<SettingsPageViewModel>(); 
 
         return builder.Build();
     }
