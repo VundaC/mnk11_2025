@@ -1,14 +1,13 @@
 using Microsoft.Maui.Controls;
-using Practice.Services.Interfaces;
 using Practice.ViewModels;
 
-namespace Practice.Views.Settings;
+namespace Practice.Views;
 
 public partial class SettingsPage : ContentPage
 {
-    public SettingsPage(IDialogService dialogService)
+    public SettingsPage(SettingsPageViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = new SettingsPageViewModel(dialogService);
+        BindingContext = viewModel;
     }
 }

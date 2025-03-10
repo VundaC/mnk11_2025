@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using Practice.Services.Interfaces;
+using Practice.Services;
 
 namespace Practice.ViewModels;
 
@@ -13,7 +13,7 @@ public class SettingsPageViewModel
         _dialogService = dialogService;
         AboutCommand = new Command(async () =>
         {
-            await _dialogService.ShowDialogAsync("About", "This is a practice app! Version 1.0");
+            await _dialogService.ShowAlertAsync("About", "This is a practice app! Version 1.0");
         });
     }
 }

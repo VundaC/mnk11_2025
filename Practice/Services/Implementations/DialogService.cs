@@ -1,12 +1,12 @@
-using Practice.Services.Interfaces;
+using Practice.Services;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Practice.Services.Implementation;
+namespace Practice.Services.Implementations;
 
 public class DialogService : IDialogService
 {
-    public async Task ShowDialogAsync(string title, string message, CancellationToken cancellationToken = default)
+    public async Task ShowAlertAsync(string title, string message, CancellationToken cancellationToken = default)
     {
         await Shell.Current.DisplayAlert(title, message, "OK");
     }

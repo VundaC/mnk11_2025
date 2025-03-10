@@ -1,8 +1,8 @@
-using Practice.Services.Interfaces;
+using Practice.Services;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Practice.Services.Implementation;
+namespace Practice.Services.Implementations;
 
 public class NavigationService : INavigationService
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Practice.Services;
-using Practice.Views.Settings; // Додано для SettingsPage
+using Practice.Views;
 
 namespace Practice;
 
@@ -17,7 +17,7 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        builder.Services.AddPracticeServices();
+        builder.Services.AddServices();
         builder.Services.AddTransient<SettingsPage>(); 
 
         return builder.Build();

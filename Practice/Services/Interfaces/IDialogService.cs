@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Practice.Services.Interfaces;
+namespace Practice.Services;
 
 public interface IDialogService
 {
-    Task ShowDialogAsync(string title, string message, CancellationToken cancellationToken = default);
+    Task ShowAlertAsync(string title, string message, CancellationToken cancellationToken = default);
 }
