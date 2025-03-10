@@ -1,4 +1,4 @@
-﻿namespace Practice.Views.Me
+﻿namespace Practice.Views
 {
     public class MePageViewModel : BaseViewModel
     {

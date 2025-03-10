@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Practice.Services;
-using Practice.Views.Me;
-
+using Practice.Views;
 namespace Practice;
 
 public static class MauiProgram

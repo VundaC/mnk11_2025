@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Practice"
-    xmlns:me="clr-namespace:Practice.Views.Me"
+    xmlns:views="clr-namespace:Practice.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
 
@@ -17,7 +17,7 @@
             </Tab>
             <Tab Title="Me">
                 <ShellContent Title="Me"
-                              ContentTemplate="{DataTemplate me:MePage}"
+                              ContentTemplate="{DataTemplate views:MePage}"
                               Route="MePage" />
             </Tab>
             <Tab Title="Three">
