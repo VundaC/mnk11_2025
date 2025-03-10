@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Practice.Services;
+using Practice.ViewModels;
 using Practice.Views;
 
 namespace Practice;
@@ -19,6 +20,8 @@ public static class MauiProgram
 
         builder.Services.AddServices();
         builder.Services.AddTransient<SettingsPage>(); 
+        builder.Services.AddTransient<SettingsPageViewModel>(); 
+        
 
         return builder.Build();
     }
