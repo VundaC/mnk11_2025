@@ -1,4 +1,5 @@
-﻿using Practice.Services;
+﻿using Microsoft.Extensions.Logging;
+using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
 
@@ -25,6 +26,9 @@ public static class MauiProgram
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>(); 
 
-        return builder.Build();
+        #if DEBUG
+            builder.Logging.AddDebug();
+        #endif
+            return builder.Build();
     }
 }

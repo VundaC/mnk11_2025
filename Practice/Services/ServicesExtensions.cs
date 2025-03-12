@@ -1,4 +1,4 @@
-using Practice.Services;
+using Practice.Interfaces;
 using Practice.Services.Implementations;
 
 namespace Practice.Services;

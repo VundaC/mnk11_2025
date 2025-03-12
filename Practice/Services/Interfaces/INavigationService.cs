@@ -1,4 +1,4 @@
-namespace Practice.Services;
+namespace Practice.Interfaces;
 
 public interface INavigationService
 {

@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using Practice.Services;
+using Practice.Interfaces;
 
 namespace Practice.ViewModels;
 

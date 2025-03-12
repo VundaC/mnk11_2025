@@ -1,7 +1,4 @@
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Practice.Services;
+namespace Practice.Interfaces;
 
 public interface IDialogService
 {
