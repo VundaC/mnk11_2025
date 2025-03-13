@@ -3,7 +3,7 @@ using Microsoft.Maui;
 
 namespace Practice.Services.Implementations
 {
-    public class PlatformService : IPlatform
+    public class PlatformService : IPlatformService
     {
         public string AppVersion => $"{AppInfo.VersionString} ({AppInfo.BuildString})";
         public string DeviceName => DeviceInfo.Name;

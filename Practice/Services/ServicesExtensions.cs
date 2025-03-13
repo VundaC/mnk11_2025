@@ -9,7 +9,7 @@ public static class ServicesExtensions
     {
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<IDialogService, DialogService>();
-        services.AddSingleton<IPlatform, PlatformService>();
+        services.AddSingleton<IPlatformService, PlatformService>();
         return services;
     }
 }

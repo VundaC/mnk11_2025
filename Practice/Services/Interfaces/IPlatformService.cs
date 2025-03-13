@@ -1,6 +1,6 @@
 namespace Practice.Interfaces
 {
-    public interface IPlatform
+    public interface IPlatformService
     {
         string AppVersion { get; }
         string DeviceName { get; }
