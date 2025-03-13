@@ -4,8 +4,8 @@ namespace Practice.Services.Implementations;
 
 public class NavigationService : INavigationService
 {
-    public Task NavigateAsync(string route, CancellationToken cancellationToken = default)
+    public async Task NavigateAsync(string route, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        await Shell.Current.GoToAsync(route, true);
     }
 }
