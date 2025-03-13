@@ -8,7 +8,6 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
 
-
         <TabBar>
             <Tab Title="One">
                 <ShellContent Title="One"
@@ -20,10 +19,10 @@
                               ContentTemplate="{DataTemplate views:MePage}"
                               Route="MePage" />
             </Tab>
-            <Tab Title="Three">
-                <ShellContent Title="Three"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="ThreePage" />
+            <Tab Title="Settings">
+                <ShellContent Title="Settings"
+                  ContentTemplate="{DataTemplate views:SettingsPage}"
+                  Route="settings" />
             </Tab>
             <Tab Title="Four">
                 <ShellContent Title="Four"

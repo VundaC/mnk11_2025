@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Practice.Services;
+using Practice.ViewModels;
 using Practice.Views;
+
 namespace Practice;
 
 public static class MauiProgram
@@ -15,14 +17,18 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-        builder.Services
-            .AddServices();
-        builder.Services.AddSingleton<MePageViewModel>();
-        builder.Services.AddSingleton<MePage>();
 
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
-        return builder.Build();
+        builder.Services.AddServices();
+
+        builder.Services
+            .AddSingleton<MePageViewModel>()
+            .AddSingleton<MePage>()
+            .AddTransient<SettingsPage>()
+            .AddTransient<SettingsPageViewModel>(); 
+
+        #if DEBUG
+            builder.Logging.AddDebug();
+        #endif
+            return builder.Build();
     }
 }

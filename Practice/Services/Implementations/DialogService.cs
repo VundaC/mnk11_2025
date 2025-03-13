@@ -4,8 +4,8 @@ namespace Practice.Services.Implementations;
 
 public class DialogService : IDialogService
 {
-    public Task ShowAlertAsync(string title, string message, CancellationToken cancellationToken = default)
+    public async Task ShowAlertAsync(string title, string message, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        await Shell.Current.DisplayAlert(title, message, "OK");
     }
 }
