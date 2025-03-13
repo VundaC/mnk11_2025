@@ -7,13 +7,16 @@ public class SettingsPageViewModel
 {
     public ICommand AboutCommand { get; }
     private readonly IDialogService _dialogService;
+    public string Version { get; } 
 
-    public SettingsPageViewModel(IDialogService dialogService)
+    public SettingsPageViewModel(IDialogService dialogService, IPlatformService platformService)
     {
         _dialogService = dialogService;
+        Version = $"Version: {platformService.AppVersion}";
+
         AboutCommand = new Command(async () =>
         {
-            await _dialogService.ShowAlertAsync("About", "This is a practice app! Version 1.0");
+            await _dialogService.ShowAlertAsync("About", $"This is a practice app! {Version}");
         });
     }
 }

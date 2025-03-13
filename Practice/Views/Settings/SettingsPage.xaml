@@ -5,5 +5,13 @@
     <StackLayout>
         <Label Text="Welcome to practice app" />
         <Button Text="About" Command="{Binding AboutCommand}" />
+        <Label Text="Developed by MKN-11 Team" 
+           FontSize="Small"
+           TextColor="Gray"
+           HorizontalOptions="Center"/>
+        <Label Text="{Binding Version}" 
+            FontSize="Small" 
+            TextColor="Gray" 
+            HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>
