@@ -34,6 +34,7 @@ public class PreferenceService : IPreference
         catch
         {
             return default;
+
         }
     }
     public bool DeleteSecure(string key)
