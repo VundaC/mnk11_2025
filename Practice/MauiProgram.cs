@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Practice.Services;
+using Practice.Services.Implementations;
 using Practice.ViewModels;
 using Practice.Views;
 
@@ -23,6 +24,7 @@ public static class MauiProgram
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
+            .AddSingleton<PreferenceService>()  
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>(); 
 
