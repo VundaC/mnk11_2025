@@ -17,7 +17,7 @@ public class PreferenceService : IPreference
         string value = Preferences.Default.Get(key, defaultValue.ToString());
         try
         {
-            return (T)Convert.ChangeType(value, typeof(T)); // Конвертуємо string у T
+            return (T)Convert.ChangeType(value, typeof(T)); 
         }
         catch
         {
@@ -29,7 +29,7 @@ public class PreferenceService : IPreference
         string value = await SecureStorage.Default.GetAsync(key);
         try
         {
-            return (T)Convert.ChangeType(value, typeof(T)); // Конвертуємо string у T
+            return (T)Convert.ChangeType(value, typeof(T)); 
         }
         catch
         {
