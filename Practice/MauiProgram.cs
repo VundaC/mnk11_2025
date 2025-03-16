@@ -24,11 +24,13 @@ public static class MauiProgram
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
             .AddTransient<SettingsPage>()
-            .AddTransient<SettingsPageViewModel>(); 
+            .AddTransient<SettingsPageViewModel>();
+        builder.Services.AddSingleton<MainPageViewModel>();
+        builder.Services.AddSingleton<MainPage>();
 
-        #if DEBUG
+#if DEBUG
             builder.Logging.AddDebug();
-        #endif
-            return builder.Build();
+#endif
+        return builder.Build();
     }
 }
