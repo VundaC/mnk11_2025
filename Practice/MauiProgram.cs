@@ -25,8 +25,8 @@ public static class MauiProgram
             .AddSingleton<MePage>()
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>();
-            .AddSingleton<MainPageViewModel>();
-            .AddSingleton<MainPage>();
+        .AddSingleton<MainPageViewModel>();
+        .AddSingleton<MainPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
