@@ -1,9 +1,10 @@
-namespace Practice.Views.EditProfile;
+namespace Practice.Views;
 
 public partial class EditProfilePage : ContentPage
 {
-	public EditProfilePage()
+	public EditProfilePage(EditProfileViewModel viewModel)
 	{
 		InitializeComponent();
-	}
+        BindingContext = viewModel;
+    }
 }

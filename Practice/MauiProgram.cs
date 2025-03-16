@@ -21,6 +21,8 @@ public static class MauiProgram
         builder.Services.AddServices();
 
         builder.Services
+            .AddSingleton<EditProfilePage>()
+            .AddSingleton<EditProfileViewModel>()
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
             .AddTransient<SettingsPage>()
