@@ -5,6 +5,7 @@
     <StackLayout>
         <Label Text="Welcome to practice app" />
         <Button Text="About" Command="{Binding AboutCommand}" />
+        <Switch IsToggled="{Binding IsDarkTheme, Mode=TwoWay}" />
         <Label Text="Developed by MKN-11 Team" 
            FontSize="Small"
            TextColor="Gray"
