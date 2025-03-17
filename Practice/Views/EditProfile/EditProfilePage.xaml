@@ -3,20 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practice.Views.EditProfilePage"
              xmlns:local="clr-namespace:Practice.Views"
-             Title="EditProfilePage">
+             Title="EditProfilePage"
+             x:DataType="local:EditProfileViewModel">
     <StackLayout Padding="10, 0">
-        <Entry x:Name="FirstName"
-               Text=""
+        <Entry Text="{Binding FirstName}"
                Placeholder="First name"
                VerticalOptions="Center" />
-        <Entry x:Name="LastName"
-               Text=""
+        <Entry Text="{Binding LastName}"
                Placeholder="Last name"
                VerticalOptions="Center" />
-        <Button x:DataType="Entry"
-                Text="Submit"
+        <Button Text="Save"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                IsEnabled="{Binding Source={x:Reference LastName}}" />
+                Command="{Binding SaveCommand}" />
     </StackLayout>
 </ContentPage>
