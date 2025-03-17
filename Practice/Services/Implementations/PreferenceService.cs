@@ -23,7 +23,7 @@ public class PreferenceService : IPreference
         }
         catch
         {
-            return default;
+            return defaultValue;
         }
     }
     public async Task<T> GetSecureAsync<T>(string key, T defaultValue = default)
