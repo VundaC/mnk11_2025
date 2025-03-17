@@ -1,4 +1,5 @@
 ﻿using Practice.Interfaces;
+using System.Text.Json;
 
 namespace Practice.Services.Implementations;
 
@@ -10,14 +11,15 @@ public class PreferenceService : IPreference
     }
     public async Task SaveSecureAsync<T>(string key, T value)
     {
-        await SecureStorage.Default.SetAsync(key, value?.ToString());
+        string valueString = JsonSerializer.Serialize(value);
+        await SecureStorage.Default.SetAsync(key, valueString);
     }
     public T Get<T>(string key, T defaultValue = default)
     {
-        string value = Preferences.Default.Get(key, defaultValue.ToString());
+        var value = Preferences.Default.Get(key, defaultValue);
         try
         {
-            return (T)Convert.ChangeType(value, typeof(T)); 
+            return value; 
         }
         catch
         {
@@ -26,14 +28,15 @@ public class PreferenceService : IPreference
     }
     public async Task<T> GetSecureAsync<T>(string key, T defaultValue = default)
     {
-        string value = await SecureStorage.Default.GetAsync(key);
         try
         {
-            return (T)Convert.ChangeType(value, typeof(T)); 
+            string value = await SecureStorage.Default.GetAsync(key);
+            if (value == null) return defaultValue;
+            return JsonSerializer.Deserialize<T>(value);
         }
         catch
         {
-            return default;
+            return defaultValue;
 
         }
     }

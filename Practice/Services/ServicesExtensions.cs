@@ -8,7 +8,8 @@ public static class ServicesExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddSingleton<INavigationService, NavigationService>();
-        services.AddSingleton<IDialogService, DialogService>();
+        services.AddSingleton<IDialogService, DialogService>()
+            .AddSingleton<IPreference, PreferenceService>();
         return services;
     }
 }

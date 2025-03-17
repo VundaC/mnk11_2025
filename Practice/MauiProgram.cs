@@ -24,7 +24,6 @@ public static class MauiProgram
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
-            .AddSingleton<PreferenceService>()  
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>(); 
 
