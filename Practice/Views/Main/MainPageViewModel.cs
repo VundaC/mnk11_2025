@@ -3,7 +3,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace MauiApp.ViewModels.Main
+namespace MauiApp.Views;
 {
     public partial class MainPageViewModel : ObservableObject
     {

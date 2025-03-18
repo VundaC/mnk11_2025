@@ -1,6 +1,6 @@
 ﻿using MauiApp.ViewModels.Main;
 
-namespace MauiApp.Views.Main;
+namespace MauiApp.Views;
 
 public partial class MainPage : ContentPage
 {
