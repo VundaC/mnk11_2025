@@ -11,26 +11,25 @@
 	<TabBar>
 		<Tab Title="One">
 			<ShellContent Title="One"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="OnePage" />
+						  ContentTemplate="{DataTemplate local:MainPage}"
+						  Route="OnePage" />
 		</Tab>
 		<Tab Title="Me">
 			<ShellContent Title="Me"
-                              ContentTemplate="{DataTemplate views:MePage}"
-                              Route="MePage" />
+						  ContentTemplate="{DataTemplate views:MePage}"
+						  Route="MePage" />
 		</Tab>
 		<Tab Title="Settings">
 			<ShellContent Title="Settings"
-                  ContentTemplate="{DataTemplate views:SettingsPage}"
-                  Route="settings" />
+			  ContentTemplate="{DataTemplate views:SettingsPage}"
+			  Route="settings" />
 		</Tab>
 		<Tab Title="Four">
 			<ShellContent Title="Four"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="FourPage" />
+						  ContentTemplate="{DataTemplate local:MainPage}"
+						  Route="FourPage" />
 		</Tab>
 	</TabBar>
 
 
 </Shell>
-
