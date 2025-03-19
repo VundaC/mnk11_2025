@@ -15,6 +15,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -36,6 +37,12 @@
                        Grid.Column="1"
                        Text="{Binding LastName}"
                        TextColor="Purple" />
+                <Button Grid.Row="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Text="Edit"
+                        Command="{Binding EditProfileCommand}"
+                        />
             </Grid>
             <Label x:Name="base64EncodedImage"
                    FontSize="18"

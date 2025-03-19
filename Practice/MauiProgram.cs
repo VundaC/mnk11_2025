@@ -23,6 +23,8 @@ public static class MauiProgram
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
+            .AddSingleton<EditProfilePage>()
+            .AddSingleton<EditProfilePageViewModel>()
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>(); 
 
