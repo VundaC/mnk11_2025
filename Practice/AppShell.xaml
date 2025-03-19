@@ -8,6 +8,7 @@
     xmlns:main="clr-namespace:Practice.Views.Main"
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
+  
 
 	<TabBar>
 		<Tab Title="One">
@@ -31,5 +32,6 @@
                           Route="FourPage" />
 		</Tab>
 	</TabBar>
+
 
 </Shell>
