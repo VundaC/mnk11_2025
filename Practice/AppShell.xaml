@@ -10,7 +10,7 @@
     Title="Practice">
 
 	<TabBar>
-
+		
 		<Tab Title="One">
 			<ShellContent Title="One"
                           ContentTemplate="{DataTemplate main:MainPage}"
@@ -35,9 +35,9 @@
                           ContentTemplate="{DataTemplate main:MainPage}"
                           Route="FourPage" />
 		</Tab>
-
+		
 	</TabBar>
- 
+
 	
 </Shell>
 
