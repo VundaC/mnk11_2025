@@ -3,7 +3,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace MauiApp.Views;
+namespace MauiApp.ViewModels
 {
     public partial class MainPageViewModel : ObservableObject
     {
@@ -16,6 +16,7 @@ namespace MauiApp.Views;
         {
             RandomCommand = new RelayCommand(GenerateRandomNumber);
         }
+
         private void GenerateRandomNumber()
         {
             Random random = new Random();

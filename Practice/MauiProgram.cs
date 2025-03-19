@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
-using Practice.Services;
-using Practice.ViewModels;
-using Practice.Views;
+using MauiApp.Services;
+using MauiApp.ViewModels;
+using MauiApp.Views;
+using MauiApp.Views.Main;
 
-namespace Practice;
+namespace MauiApp;
 
 public static class MauiProgram
 {
@@ -26,11 +27,12 @@ public static class MauiProgram
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>()
             .AddSingleton<MainPageViewModel>()
-            .AddSingleton<MainPage>()
+            .AddSingleton<MainPage>();
 
 #if DEBUG
-            builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
+
         return builder.Build();
     }
 }

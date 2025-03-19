@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="Practice.AppShell"
+    x:Class="MauiApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Practice"
-    xmlns:views="clr-namespace:Practice.Views"
-	
+    xmlns:views="clr-namespace:MauiApp.Views"
+    xmlns:main="clr-namespace:MauiApp.Views.Main"
     Shell.FlyoutBehavior="Disabled"
-    Title="Practice">
+    Title="MauiApp">
 
 	<TabBar>
-		<Tab Title="One">
-			<ShellContent Title="One"
-						  ContentTemplate="{DataTemplate local:MainPage}"
-						  Route="OnePage" />
+		<Tab Title="Main">
+			<ShellContent Title="Main"
+                          ContentTemplate="{DataTemplate main:MainPage}"
+                          Route="MainPage" />
 		</Tab>
 		<Tab Title="Me">
 			<ShellContent Title="Me"
-						  ContentTemplate="{DataTemplate views:MePage}"
-						  Route="MePage" />
+                          ContentTemplate="{DataTemplate views:MePage}"
+                          Route="MePage" />
 		</Tab>
 		<Tab Title="Settings">
 			<ShellContent Title="Settings"
-			  ContentTemplate="{DataTemplate views:SettingsPage}"
-			  Route="settings" />
+                          ContentTemplate="{DataTemplate views:SettingsPage}"
+                          Route="SettingsPage" />
 		</Tab>
 		<Tab Title="Four">
 			<ShellContent Title="Four"
-						  ContentTemplate="{DataTemplate local:MainPage}"
-						  Route="FourPage" />
+                          ContentTemplate="{DataTemplate main:MainPage}"
+                          Route="FourPage" />
 		</Tab>
 	</TabBar>
-
-
+	
+	
 </Shell>
