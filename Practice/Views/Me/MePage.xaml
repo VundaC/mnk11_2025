@@ -11,7 +11,8 @@
         <VerticalStackLayout Padding="30,0"
                              Spacing="25"
                              VerticalOptions="Center">
-            <Grid HorizontalOptions="Center">
+            <Grid HorizontalOptions="Center"
+                  RowSpacing="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -38,7 +39,7 @@
                        Text="{Binding LastName}"
                        TextColor="Purple" />
                 <Button Grid.Row="2"
-                        Grid.Column="2"
+                        Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Text="Edit"
                         Command="{Binding EditProfileCommand}"

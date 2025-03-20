@@ -5,7 +5,9 @@
              xmlns:local="clr-namespace:Practice.Views"
              Title="EditProfilePage"
              x:DataType="local:EditProfilePageViewModel">
-    <StackLayout Padding="10, 0">
+    <VerticalStackLayout Padding="100, 20"    
+                 Spacing="10"
+                 >
         <Entry Text="{Binding FirstName}"
                Placeholder="First name"
                VerticalOptions="Center" />
@@ -13,8 +15,7 @@
                Placeholder="Last name"
                VerticalOptions="Center" />
         <Button Text="Save"
-                HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Command="{Binding SaveCommand}" />
-    </StackLayout>
+    </VerticalStackLayout>
 </ContentPage>

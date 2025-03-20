@@ -15,9 +15,10 @@ namespace Practice.Views
         {
             _navigationService = navigationService;
             _preferencesService = preferenceService;
-            _firstName = _preferencesService.Get("FirstName", "Bogdan");
-            _lastName = _preferencesService.Get("LastName", "Nazarchuk");
+            
             EditProfileCommand = new AsyncRelayCommand(NavigateToEditProfile);
+
+            LoadPreferences();
         }
         public string FirstName
         {
@@ -41,6 +42,11 @@ namespace Practice.Views
         {
             await _navigationService.NavigateAsync("editprofile");
 
+        }
+        public void LoadPreferences()
+        {
+            FirstName = _preferencesService.Get("FirstName", "Bogdan");
+            LastName = _preferencesService.Get("LastName", "Ivanov");
         }
 
     }
