@@ -6,7 +6,8 @@
     xmlns:views="clr-namespace:MauiApp.Views"
     xmlns:main="clr-namespace:MauiApp.Views.Main"
     Shell.FlyoutBehavior="Disabled"
-    Title="MauiApp">
+    Title="Practice">
+  
 
 	<TabBar>
 		<Tab Title="Main">
@@ -30,6 +31,6 @@
                           Route="FourPage" />
 		</Tab>
 	</TabBar>
-	
-	
+
+
 </Shell>
