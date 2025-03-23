@@ -17,8 +17,6 @@ namespace Practice.Views
             _preferencesService = preferenceService;
             
             EditProfileCommand = new AsyncRelayCommand(NavigateToEditProfile);
-
-            LoadPreferences();
         }
         public string FirstName
         {

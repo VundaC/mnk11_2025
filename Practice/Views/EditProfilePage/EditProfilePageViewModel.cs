@@ -11,26 +11,15 @@ namespace Practice.Views
         private readonly IPreference _preferencesService;
         private readonly IDialogService _dialogService;
         public ICommand SaveCommand { get; }
-
         public string FirstName
         {
             get => _firstName;
-            set
-            {
-                _firstName = value;
-                _preferencesService.Save("FirstName", value);
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref _firstName, value);
         }
         public string LastName
         {
             get => _lastName;
-            set
-            {
-                _lastName = value;
-                 _preferencesService.Save("LastName", value);
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref _lastName, value);
         }
         public EditProfilePageViewModel(IPreference preferencesService, IDialogService dialogService)
         {
@@ -44,11 +33,9 @@ namespace Practice.Views
         }
 
         private async void SavePreferences()
-        {
+        {    
             _preferencesService.Save("FirstName", _firstName);
             _preferencesService.Save("LastName", _lastName);
-            OnPropertyChanged(nameof(FirstName));
-            OnPropertyChanged(nameof(LastName));
             await _dialogService.ShowAlertAsync("Success!", "Name successfully saved!");
         }
 
