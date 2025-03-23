@@ -8,27 +8,31 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
 
-    <TabBar>
-        <Tab Title="One">
-            <ShellContent Title="One"
+    <TabBar >
+
+        <ShellContent Title="One"
+                      Icon="home.png"
                               ContentTemplate="{DataTemplate local:MainPage}"
                               Route="OnePage" />
-        </Tab>
-        <Tab Title="Me">
-            <ShellContent Title="Me"
+
+
+        <ShellContent Title="Me"
+                      Icon="profile.png"
                               ContentTemplate="{DataTemplate views:MePage}"
                               Route="MePage" />
-        </Tab>
-        <Tab Title="Settings">
-            <ShellContent Title="Settings"
+
+
+        <ShellContent Title="Settings"
+                      Icon="settings.png"
                   ContentTemplate="{DataTemplate views:SettingsPage}"
                   Route="settings" />
-        </Tab>
-        <Tab Title="Four">
-            <ShellContent Title="Four"
+
+
+        <ShellContent Title="Four"
+                      Icon="uknown.png"
                               ContentTemplate="{DataTemplate local:MainPage}"
                               Route="FourPage" />
-        </Tab>
+
     </TabBar>
 
 
