@@ -2,6 +2,7 @@
 using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
+using CommunityToolkit.Maui;
 
 namespace Practice;
 
@@ -12,6 +13,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
