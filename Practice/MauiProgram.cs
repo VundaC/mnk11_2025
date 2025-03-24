@@ -25,10 +25,9 @@ public static class MauiProgram
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
-            .AddSingleton<EditProfilePage>()
-            .AddSingleton<EditProfilePageViewModel>()
+            .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
-            .AddTransient<SettingsPageViewModel>(); 
+            .AddTransient<SettingsPageViewModel>();
 
         #if DEBUG
             builder.Logging.AddDebug();
