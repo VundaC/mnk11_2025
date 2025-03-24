@@ -5,7 +5,7 @@ using PropertyChangingEventArgs = System.ComponentModel.PropertyChangingEventArg
 
 namespace Practice.Views;
 
-public class BaseViewModel : INotifyPropertyChanging, INotifyPropertyChanged
+public class BaseViewModel : IQueryAttributable, INotifyPropertyChanging, INotifyPropertyChanged
 {
     #region variables
 
@@ -47,4 +47,8 @@ public class BaseViewModel : INotifyPropertyChanging, INotifyPropertyChanged
     }
 
     #endregion
+
+    public virtual void ApplyQueryAttributes(IDictionary<string, object> query)
+    {
+    }
 }
