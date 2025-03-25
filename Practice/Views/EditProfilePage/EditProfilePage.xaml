@@ -11,7 +11,8 @@
                TextColor="#f7f7f8"
                Grid.Row="0"
                Grid.Column="0"
-               VerticalTextAlignment="End"/>
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="End"/>
         <Entry Text="{Binding FirstName}"
                ClearButtonVisibility="WhileEditing"
                Placeholder="Ex. John"
@@ -23,7 +24,8 @@
                TextColor="#f7f7f8"
                Grid.Row="1"
                Grid.Column="0"
-               VerticalTextAlignment="End"/>
+               VerticalTextAlignment="End"
+               HorizontalTextAlignment="End"/>
         <Entry Text="{Binding LastName}"
                ClearButtonVisibility="WhileEditing"
                Placeholder="Ex. Doe"
