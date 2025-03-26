@@ -19,17 +19,10 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-
-		<!-- Display name -->
 		<ApplicationTitle>Practice</ApplicationTitle>
-
-		<!-- App Identifier -->
 		<ApplicationId>com.companyname.practice</ApplicationId>
-
-		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
 
@@ -40,6 +33,13 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
+		<EnableSigning>true</EnableSigning>
+<!--		<CodesignKey>Apple Development</CodesignKey>-->
+		<Entitlements>Entitlements.plist</Entitlements>
+	</PropertyGroup>
+
 
 	<ItemGroup>
 		<!-- App Icon -->
@@ -60,15 +60,27 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+		<PackageReference Include="Plugin.BLE" Version="3.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\Me\MePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\BLE\BlePage.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\BLE\BlePage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

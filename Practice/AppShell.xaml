@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <Shell
     x:Class="Practice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Practice"
     xmlns:views="clr-namespace:Practice.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
@@ -11,23 +11,18 @@
     <TabBar>
         <Tab Title="One">
             <ShellContent Title="One"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="OnePage" />
+                          ContentTemplate="{DataTemplate views:BlePage}"
+                          Route="OnePage" />
         </Tab>
         <Tab Title="Me">
             <ShellContent Title="Me"
-                              ContentTemplate="{DataTemplate views:MePage}"
-                              Route="MePage" />
+                          ContentTemplate="{DataTemplate views:MePage}"
+                          Route="MePage" />
         </Tab>
         <Tab Title="Settings">
             <ShellContent Title="Settings"
-                  ContentTemplate="{DataTemplate views:SettingsPage}"
-                  Route="settings" />
-        </Tab>
-        <Tab Title="Four">
-            <ShellContent Title="Four"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="FourPage" />
+                          ContentTemplate="{DataTemplate views:SettingsPage}"
+                          Route="settings" />
         </Tab>
     </TabBar>
 
