@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practice.Views.EditProfilePage"
+             xmlns:local="clr-namespace:Practice.Views"
+             Title="EditProfilePage"
+             x:DataType="local:EditProfilePageViewModel">
+    <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto" RowSpacing="10" ColumnSpacing="20" Padding="20,30">
+        <Label Text="Name"
+               FontSize="Medium"
+               TextColor="#f7f7f8"
+               Grid.Row="0"
+               Grid.Column="0"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="End"/>
+        <Entry Text="{Binding FirstName}"
+               ClearButtonVisibility="WhileEditing"
+               Placeholder="Ex. John"
+               VerticalOptions="Center"
+               Grid.Row="0"
+               Grid.Column="1"/>
+        <Label Text="Surname"
+               FontSize="Medium"
+               TextColor="#f7f7f8"
+               Grid.Row="1"
+               Grid.Column="0"
+               VerticalTextAlignment="End"
+               HorizontalTextAlignment="End"/>
+        <Entry Text="{Binding LastName}"
+               ClearButtonVisibility="WhileEditing"
+               Placeholder="Ex. Doe"
+               VerticalOptions="Center"
+               Grid.Row="1"
+               Grid.Column="1"/>
+        <Button Text="Save"
+                FontSize="24"
+                BackgroundColor="#9147FF"
+                TextColor="#f7f7f8"
+                x:Name="saveButton"
+                VerticalOptions="Center"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Command="{Binding SaveCommand}" />
+    </Grid>
+</ContentPage>
