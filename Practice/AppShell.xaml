@@ -10,6 +10,11 @@
 
     <TabBar >
 
+        <ShellContent Title="Main"
+                      Icon="home.png"
+                              ContentTemplate="{DataTemplate views:MainPage}"
+                              Route="MainPage" />
+        
         <ShellContent Title="One"
                       Icon="home.png"
                               ContentTemplate="{DataTemplate local:MainPage}"
@@ -32,6 +37,7 @@
                       Icon="uknown.png"
                               ContentTemplate="{DataTemplate local:MainPage}"
                               Route="FourPage" />
+      
 
     </TabBar>
 
