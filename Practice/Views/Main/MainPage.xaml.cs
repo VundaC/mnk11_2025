@@ -1,12 +1,12 @@
-﻿using MauiApp.ViewModels;
-
-namespace MauiApp.Views;
-
-public partial class MainPage : ContentPage
+﻿
+namespace Practice.Views
 {
-    public MainPage(MainPageViewModel viewModel)
+    public partial class MainPage : ContentPage
     {
-        InitializeComponent();
-        BindingContext = viewModel;
+        public MainPage(MainPageViewModel viewModel) 
+        {
+            InitializeComponent();
+            BindingContext = viewModel;
+        }
     }
 }
