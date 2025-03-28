@@ -2,13 +2,18 @@
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Practice.Views;
 
-namespace MauiApp.ViewModels
+namespace Practice.Views
 {
-    public partial class MainPageViewModel : ObservableObject
+    public partial class MainPageViewModel : BaseViewModel
     {
-        [ObservableProperty]
-        private string randomNumber;
+        private string _randomNumber;
+        public string RandomNumber
+        {
+            get => _randomNumber;
+            set => SetProperty(ref _randomNumber, value);
+        }
 
         public ICommand RandomCommand { get; }
 
@@ -20,7 +25,7 @@ namespace MauiApp.ViewModels
         private void GenerateRandomNumber()
         {
             Random random = new Random();
-            RandomNumber = random.Next(1, 1000).ToString();
+            RandomNumber = random.Next(1, 100).ToString();
         }
     }
 }

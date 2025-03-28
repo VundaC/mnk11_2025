@@ -1,5 +1,4 @@
-﻿using MauiApp.Views;
-
+﻿
 namespace Practice
 {
     public partial class AppShell : Shell

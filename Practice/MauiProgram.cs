@@ -1,10 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
-using MauiApp.Services;
-using MauiApp.ViewModels;
-using MauiApp.Views;
-using MauiApp.Views.Main;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Microsoft.Extensions.Logging;
+using Practice.Services;
+using Practice.ViewModels;
+using Practice.Views;
+using CommunityToolkit.Maui;
 
-namespace MauiApp;
+
+namespace Practice;
 
 public static class MauiProgram
 {
@@ -13,6 +16,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -24,6 +28,7 @@ public static class MauiProgram
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
+            .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>()
             .AddSingleton<MainPageViewModel>()
@@ -31,8 +36,7 @@ public static class MauiProgram
 
 #if DEBUG
         builder.Logging.AddDebug();
-#endif
-
-        return builder.Build();
+        #endif
+            return builder.Build();
     }
 }

@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="MauiApp.AppShell"
+    x:Class="Practice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:MauiApp.Views"
-    xmlns:main="clr-namespace:MauiApp.Views.Main"
+    xmlns:views="clr-namespace:Practice.Views"
+    xmlns:local="clr-namespace:Practice"
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
-  
 
-	<TabBar>
-		<Tab Title="Main">
-			<ShellContent Title="Main"
-                          ContentTemplate="{DataTemplate main:MainPage}"
-                          Route="MainPage" />
-		</Tab>
-		<Tab Title="Me">
-			<ShellContent Title="Me"
-                          ContentTemplate="{DataTemplate views:MePage}"
-                          Route="MePage" />
-		</Tab>
-		<Tab Title="Settings">
-			<ShellContent Title="Settings"
-                          ContentTemplate="{DataTemplate views:SettingsPage}"
-                          Route="SettingsPage" />
-		</Tab>
-		<Tab Title="Four">
-			<ShellContent Title="Four"
-                          ContentTemplate="{DataTemplate main:MainPage}"
-                          Route="FourPage" />
-		</Tab>
-	</TabBar>
+    <TabBar>
+        <ShellContent Title="Main"
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate views:MainPage}"
+                      Route="MainPage" />
+
+        <ShellContent Title="One"
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="OnePage" />
+
+        <ShellContent Title="Me"
+                      Icon="profile.png"
+                      ContentTemplate="{DataTemplate views:MePage}"
+                      Route="MePage" />
+
+        <ShellContent Title="Settings"
+                      Icon="settings.png"
+                      ContentTemplate="{DataTemplate views:SettingsPage}"
+                      Route="settings" />
 
 
+        <ShellContent Title="Four"
+                      Icon="unknown.png"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="FourPage" />
+    </TabBar>
 </Shell>
