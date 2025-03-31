@@ -29,7 +29,6 @@ public static class MauiProgram
             .AddTransient<SettingsPageViewModel>()
             .AddSingleton<MainPageViewModel>();
 
-        return builder.Build();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

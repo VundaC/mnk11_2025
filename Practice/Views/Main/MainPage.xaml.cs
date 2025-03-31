@@ -1,5 +1,4 @@
-﻿
-namespace Practice.Views
+﻿namespace Practice.Views
 {
     public partial class MainPage : ContentPage
     {
