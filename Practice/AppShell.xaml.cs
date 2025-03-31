@@ -1,5 +1,4 @@
-﻿
-namespace Practice
+﻿namespace Practice
 {
     public partial class AppShell : Shell
     {
