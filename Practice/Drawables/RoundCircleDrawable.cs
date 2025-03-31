@@ -42,21 +42,11 @@ internal class RoundCircleDrawable : GraphicsView, IDrawable
     {
         if (bindable is RoundCircleDrawable control && newValue is ImageSource imageSource)
         {
-            control._image = await LoadImageAsync(imageSource);
             control.Invalidate(); // Redraw the control
         }
     }
 
-     private static async Task<IImage> LoadImageAsync(ImageSource imageSource)
-        {
-            if (imageSource is FileImageSource fileSource)
-            {
-                var filePath = fileSource.File;
-                using var stream = File.OpenRead(filePath);
-                return  PlatformImage.FromStream(stream);
-            }
-            return null;
-        }
+
 
 
 
