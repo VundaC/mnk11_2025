@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
 using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
+using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
+
 
 namespace Practice;
 
@@ -14,21 +17,20 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        builder.Services.AddServices();
-
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
-            .AddSingleton<EditProfilePage>()
-            .AddSingleton<EditProfilePageViewModel>()
+            .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>();
+            .AddSingleton<MainPageViewModel>();
 
         builder.Logging
             .ClearProviders()
@@ -36,6 +38,8 @@ public static class MauiProgram
         NLog.LogManager.Setup().RegisterMauiLog()
     .LoadConfigurationFromAssemblyResource(typeof(App).Assembly);
 
+
+            
         return builder.Build();
     }
 }

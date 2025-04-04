@@ -17,6 +17,7 @@ namespace Practice.Views
             _preferencesService = preferenceService;
             
             EditProfileCommand = new AsyncRelayCommand(NavigateToEditProfile);
+            LoadPreferences();
         }
         public string FirstName
         {
@@ -38,7 +39,17 @@ namespace Practice.Views
         }
         private async Task NavigateToEditProfile()
         {
-            await _navigationService.NavigateAsync("editprofile");
+            var navigationParameter = new Dictionary<string, object>
+            {
+                {
+                    nameof(EditProfileNavigationModel), new EditProfileNavigationModel
+                    {
+                        Id = "qwer",
+                        DataWasUpdated = LoadPreferences
+                    }
+                }
+            };
+            await _navigationService.NavigateAsync("editprofile", navigationParameter);
 
         }
         public void LoadPreferences()

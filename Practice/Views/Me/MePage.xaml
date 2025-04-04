@@ -12,7 +12,8 @@
                              Spacing="25"
                              VerticalOptions="Center">
             <Grid HorizontalOptions="Center"
-                  RowSpacing="20">
+                  RowSpacing="20"
+                  ColumnSpacing="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -25,24 +26,31 @@
                 <Label Grid.Row="0"
                        Grid.Column="0"
                        Text="First name:"
-                       TextColor="Purple" />
+                       FontSize="Medium"
+                       TextColor="#f7f7f8" />
                 <Label Grid.Row="0"
                        Grid.Column="1"
                        Text="{Binding FirstName}"
-                       TextColor="Purple" />
+                       FontSize="Medium"
+                       TextColor="#f7f7f8" />
                 <Label Grid.Row="1"
                        Grid.Column="0"
                        Text="Last name:"
-                       TextColor="Purple" />
+                       FontSize="Medium"
+                       TextColor="#f7f7f8" />
                 <Label Grid.Row="1"
                        Grid.Column="1"
                        Text="{Binding LastName}"
-                       TextColor="Purple" />
+                       FontSize="Medium"
+                       TextColor="#f7f7f8" />
                 <Button Grid.Row="2"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Text="Edit"
                         Command="{Binding EditProfileCommand}"
+                        FontSize="24"
+                        BackgroundColor="#9147FF"
+                        TextColor="#f7f7f8"
                         />
             </Grid>
             <Label x:Name="base64EncodedImage"
@@ -52,7 +60,7 @@
                    HeightRequest="185"
                    Aspect="AspectFit"
                    SemanticProperties.Description="dot net bot in a hovercraft number nine" />
-            
+
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
