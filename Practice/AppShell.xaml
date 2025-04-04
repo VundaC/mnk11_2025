@@ -3,37 +3,36 @@
     x:Class="Practice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Practice"
     xmlns:views="clr-namespace:Practice.Views"
+    xmlns:local="clr-namespace:Practice"
     Shell.FlyoutBehavior="Disabled"
     Title="Practice">
 
-    <TabBar >
+    <TabBar>
+        <ShellContent Title="Main"
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate views:MainPage}"
+                      Route="MainPage" />
 
         <ShellContent Title="One"
                       Icon="home.png"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="OnePage" />
-
+                      ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="OnePage" />
 
         <ShellContent Title="Me"
                       Icon="profile.png"
-                              ContentTemplate="{DataTemplate views:MePage}"
-                              Route="MePage" />
-
+                      ContentTemplate="{DataTemplate views:MePage}"
+                      Route="MePage" />
 
         <ShellContent Title="Settings"
                       Icon="settings.png"
-                  ContentTemplate="{DataTemplate views:SettingsPage}"
-                  Route="settings" />
+                      ContentTemplate="{DataTemplate views:SettingsPage}"
+                      Route="settings" />
 
 
         <ShellContent Title="Four"
-                      Icon="uknown.png"
-                              ContentTemplate="{DataTemplate local:MainPage}"
-                              Route="FourPage" />
-
+                      Icon="unknown.png"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="FourPage" />
     </TabBar>
-
-
 </Shell>
