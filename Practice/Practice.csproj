@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
@@ -60,10 +60,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="NLog.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="NLog.config" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="NLog" Version="5.4.0" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="5.4.0" />
+		<PackageReference Include="NLog.Targets.MauiLog" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

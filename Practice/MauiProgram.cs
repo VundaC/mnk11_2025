@@ -1,4 +1,7 @@
-﻿using Practice.Services;
+using Microsoft.Extensions.Logging;
+using NLog;
+using NLog.Extensions.Logging;
+using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
 using CommunityToolkit.Maui;
@@ -26,12 +29,17 @@ public static class MauiProgram
             .AddSingleton<MePage>()
             .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
-            .AddTransient<SettingsPageViewModel>()
+            .AddTransient<SettingsPageViewModel>();
             .AddSingleton<MainPageViewModel>();
 
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
+        builder.Logging
+            .ClearProviders()
+            .AddNLog();
+        NLog.LogManager.Setup().RegisterMauiLog()
+    .LoadConfigurationFromAssemblyResource(typeof(App).Assembly);
+
+
+            
         return builder.Build();
     }
 }
