@@ -5,7 +5,7 @@
         public MePage(MePageViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = _viewModel = viewModel;
+            BindingContext = viewModel;
         }
     }
 }
