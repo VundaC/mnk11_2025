@@ -23,6 +23,7 @@ public static class MauiProgram
             });
             
         builder.Services
+            .AddServices()
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()
             .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
