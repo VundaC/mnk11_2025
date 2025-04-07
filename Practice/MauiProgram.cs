@@ -29,7 +29,7 @@ public static class MauiProgram
             .AddSingleton<MePage>()
             .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
-            .AddTransient<SettingsPageViewModel>();
+            .AddTransient<SettingsPageViewModel>()
             .AddSingleton<MainPageViewModel>();
 
         builder.Logging
