@@ -7,12 +7,12 @@ public class SettingsPageViewModel
 {
     private const string ThemePreferenceKey = "AppTheme";
 
-    public ICommand AboutCommand { get; }
     public ICommand ToggleThemeCommand { get; }
+    public ICommand ShowInfoCommand { get; }
     private readonly IDialogService _dialogService;
     private readonly IPreference _preferenceService;
     public string Version { get; }
-    
+
     private bool _isDarkTheme;
     public bool IsDarkTheme
     {
@@ -36,14 +36,14 @@ public class SettingsPageViewModel
 
         _isDarkTheme = _preferenceService.Get(ThemePreferenceKey, false);
 
-        AboutCommand = new Command(async () =>
-        {
-            await _dialogService.ShowAlertAsync("About", $"This is a practice app! {Version}");
-        });
-
         ToggleThemeCommand = new Command(() =>
         {
             IsDarkTheme = !IsDarkTheme;
+        });
+
+        ShowInfoCommand = new Command(async () =>
+        {
+            await _dialogService.ShowAlertAsync("Developers", "This app is developed by Practice Team.");
         });
     }
 

@@ -5,8 +5,6 @@ using Practice.Services;
 using Practice.ViewModels;
 using Practice.Views;
 using CommunityToolkit.Maui;
-using Microsoft.Extensions.Logging;
-
 
 namespace Practice;
 
@@ -23,7 +21,7 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
+            
         builder.Services
             .AddSingleton<MePageViewModel>()
             .AddSingleton<MePage>()

@@ -1,18 +1,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practice.Views.SettingsPage"
-             Title="Settings">
-    <StackLayout>
-        <Label Text="Welcome to practice app" />
-        <Button Text="About" Command="{Binding AboutCommand}" />
-        <Switch IsToggled="{Binding IsDarkTheme, Mode=TwoWay}" />
-        <Label Text="Developed by MKN-11 Team" 
-           FontSize="Small"
-           TextColor="Gray"
-           HorizontalOptions="Center"/>
-        <Label Text="{Binding Version}" 
-            FontSize="Small" 
-            TextColor="Gray" 
-            HorizontalOptions="Center"/>
-    </StackLayout>
+             Title="Settings"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="Settings"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="Auto, *" Padding="10">
+            <Label Text="Dark Mode"
+                   VerticalOptions="Center"
+                   FontSize="18"/>
+            <Switch IsToggled="{Binding IsDarkTheme, Mode=TwoWay}"
+                    Grid.Column="1"
+                    HorizontalOptions="End"/>
+        </Grid>
+
+        <BoxView HeightRequest="1" BackgroundColor="Gray" Opacity="0.3" />
+
+        <Label Text="{Binding Version}"
+               FontSize="14"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               Padding="10"
+               GestureRecognizers="{TapGestureRecognizer Command={Binding ShowInfoCommand}}"/>
+
+    </VerticalStackLayout>
 </ContentPage>
