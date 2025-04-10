@@ -1,4 +1,3 @@
-using Microsoft.Maui.Controls;
 using Practice.ViewModels;
 
 namespace Practice.Views;

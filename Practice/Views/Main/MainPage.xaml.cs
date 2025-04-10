@@ -1,8 +1,8 @@
 ﻿namespace Practice.Views
 {
-    public partial class MePage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public MePage(MePageViewModel viewModel)
+        public MainPage(MainPageViewModel viewModel) 
         {
             InitializeComponent();
             BindingContext = viewModel;

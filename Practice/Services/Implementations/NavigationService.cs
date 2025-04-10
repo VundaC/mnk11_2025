@@ -4,8 +4,12 @@ namespace Practice.Services.Implementations;
 
 public class NavigationService : INavigationService
 {
-    public async Task NavigateAsync(string route, CancellationToken cancellationToken = default)
+    public async Task NavigateAsync(string route, Dictionary<string, object> parameters = null, CancellationToken cancellationToken = default)
     {
-        await Shell.Current.GoToAsync(route, true);
-    }
+        if(parameters == null)
+            await Shell.Current.GoToAsync(route, animate: true);
+        else
+            await Shell.Current.GoToAsync(route, animate: true, parameters: parameters);
+    }        
+
 }
