@@ -9,19 +9,18 @@
              mc:Ignorable="d"
              x:DataType="local:MePageViewModel">
     <ContentPage.Resources>
-
         <drawable:RoundCircleDrawable x:Key="drawable" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <VerticalStackLayout Padding="30,0"
                              Spacing="25"
                              VerticalOptions="Center">
-            <drawable:RoundCircleDrawable
-            ImageSource="profile.png"
-            BorderWidth="8"
-            BorderColor="Red"
-            HeightRequest="150"
-            WidthRequest="150"/>
+            <drawable:RoundCircleDrawable 
+                     WidthRequest="320"
+                     HeightRequest="320"
+                     BorderWidth="4"
+                     ImageSource="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
+                BorderColor="Red"/>
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -55,7 +54,7 @@
                    HeightRequest="185"
                    Aspect="AspectFit"
                    SemanticProperties.Description="dot net bot in a hovercraft number nine" />
-            
+
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
