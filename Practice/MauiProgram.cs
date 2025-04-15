@@ -29,7 +29,9 @@ public static class MauiProgram
             .AddTransientWithShellRoute<EditProfilePage, EditProfilePageViewModel>("editprofile")
             .AddTransient<SettingsPage>()
             .AddTransient<SettingsPageViewModel>()
-            .AddSingleton<MainPageViewModel>();
+            .AddSingleton<MainPageViewModel>()
+            .AddSingleton<LoginPage>()
+            .AddSingleton<LoginPageViewModel>();
 
         builder.Logging
             .ClearProviders()
