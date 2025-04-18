@@ -43,15 +43,16 @@ namespace Practice.Views
 
         private async Task Login()
         {
+            var window = Application.Current?.Windows.FirstOrDefault();
             if (!_users.TryGetValue(Username, out var validPassword) || Password != validPassword)
             {
-               // await _dialogService.ShowAlertAsync("Error!", "Wrong password or username!");
+                await window.Page.DisplayAlert("Error", "Invalid username or password", "OK");
                 return;
             }
 
             await Task.Delay(1000); 
 
-            var window = Application.Current?.Windows.FirstOrDefault();
+           
             if (window is not null)
             {
                 window.Page = new AppShell();
