@@ -8,19 +8,7 @@ namespace Practice.Views
 {
     public partial class MainPageViewModel : BaseViewModel
     {
-        private 
-
-        public ICommand RandomCommand { get; }
-
-        public MainPageViewModel()
-        {
-            RandomCommand = new RelayCommand(GenerateRandomNumber);
-        }
-
-        private void GenerateRandomNumber()
-        {
-            Random random = new Random();
-            RandomNumber = random.Next(1, 100).ToString();
-        }
+        public double Radius { get => _radius; set => SetProperty(ref _radius, value); }
+        private double _radius;
     }
 }
