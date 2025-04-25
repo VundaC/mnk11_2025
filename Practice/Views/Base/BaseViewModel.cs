@@ -33,7 +33,28 @@ public class BaseViewModel : IQueryAttributable, INotifyPropertyChanging, INotif
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+    protected bool SetProperty<T>(
+        ref T field, T value,
+        [CallerMemberName] string propertyName = null,
+        Action onChanging = null,
+        Action onChanged = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value))
+        {
+            return false;
+        }
+
+        OnPropertyChanging(propertyName);
+        onChanging?.Invoke();
+        field = value;
+        OnPropertyChanged(propertyName);
+        onChanged?.Invoke();
+        return true;
+    }
+    
+    protected bool SetPropertyAndNotify<T>(
+        ref T field, T value,
+        [CallerMemberName] string propertyName = null, List<string> notifyList = null)
     {
         if (EqualityComparer<T>.Default.Equals(field, value))
         {
@@ -42,10 +63,11 @@ public class BaseViewModel : IQueryAttributable, INotifyPropertyChanging, INotif
 
         OnPropertyChanging(propertyName);
         field = value;
+        notifyList?.ForEach(OnPropertyChanged);
         OnPropertyChanged(propertyName);
         return true;
     }
-
+    
     #endregion
 
     public virtual void ApplyQueryAttributes(IDictionary<string, object> query)

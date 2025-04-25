@@ -3,17 +3,83 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Practice.Controls"
+             xmlns:views="clr-namespace:Practice.Views"
+             x:DataType="{x:Type views:MainPageViewModel}"
              x:Class="Practice.Views.MainPage">
-<HorizontalStackLayout>
-    <Grid>
-        <controls:RoundRectangle HorizontalOptions="Center"
-                                 VerticalOptions="Center"
-                                 WidthRequest="200"
-                                 HeightRequest="150"
-                                 CornerRadius="75"
-                                 Color="Red"/>
-    </Grid>
-    <Slider />
-</HorizontalStackLayout>
+    <VerticalStackLayout Padding="10"
+                         Spacing="10">
+        <Grid HorizontalOptions="Center">
+            <controls:RoundRectangle HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     WidthRequest="400"
+                                     HeightRequest="200"
+                                     BorderWidth="{Binding BorderWidth}"
+                                     CornerRadius="{Binding Radius}"
+                                     Color="{Binding Color}" />
+        </Grid>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto"
+              ColumnDefinitions="auto, 300"
+              RowSpacing="4"
+              ColumnSpacing="4"
+              HorizontalOptions="Center">
+            <Label Grid.Row="0" Grid.Column="0" Text="Radius (dp): "
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+            <Slider Grid.Row="0" Grid.Column="1"
+                    Value="{Binding Radius}"
+                    Minimum="10"
+                    Maximum="110" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Border width (px): "
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+            <Slider Grid.Row="1" Grid.Column="1"
+                    Value="{Binding BorderWidth}"
+                    Minimum="1"
+                    Maximum="100" />
+            <Label Grid.Row="3"
+                   Margin="0,20,0,0"
+                   Text="Color:"/>
+            <Border Grid.Row="4" Grid.ColumnSpan="2"
+                    Padding="10">
+                <Grid RowDefinitions="auto,auto,auto,auto"
+                      RowSpacing="4"
+                      ColumnSpacing="4"
+                      ColumnDefinitions="auto, *">
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Alpha:"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Slider Grid.Row="0" Grid.Column="1"
+                            Value="{Binding Alpha}"
+                            Minimum="0"
+                            Maximum="1" />
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Red:"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Slider Grid.Row="1" Grid.Column="1"
+                            Value="{Binding Red}"
+                            Minimum="0"
+                            Maximum="255" />
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Green:"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Slider Grid.Row="2" Grid.Column="1"
+                            Value="{Binding Green}"
+                            Minimum="0"
+                            Maximum="255" />
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Blue:"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Slider Grid.Row="3" Grid.Column="1"
+                            Value="{Binding Blue}"
+                            Minimum="0"
+                            Maximum="255" />
+                </Grid>
+            </Border>
+        </Grid>
+    </VerticalStackLayout>
 
 </ContentPage>

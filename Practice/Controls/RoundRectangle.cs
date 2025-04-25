@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Practice.Controls;
 
 public class RoundRectangle: GraphicsView, IDrawable
@@ -59,12 +61,27 @@ public class RoundRectangle: GraphicsView, IDrawable
     {
         canvas.StrokeColor = Color;
         canvas.StrokeSize = (int)BorderWidth;
+        canvas.StrokeLineJoin = LineJoin.Round;
         var path = new PathF();
         var r = (float)CornerRadius;
-        var width = dirtyRect.Width;
-        var height = dirtyRect.Height;
+        var p = (float)BorderWidth / 2;
+        var x0 = p;
+        var y0 = p;
+        var width = dirtyRect.Width - 2 * p;
+        var height = dirtyRect.Height - 2 * p;
+        r = Math.Min(r, Math.Min(width, height) / 2);
         canvas.StrokeColor = Color;
-        
+        canvas.StrokeSize = (float)(BorderWidth / DeviceDisplay.Current.MainDisplayInfo.Density);
+        path.MoveTo(x0 + r, y0);
+        path.LineTo(width - r, y0);
+        path.AddArc(width - 2 * r, y0, width, y0 + 2 * r, 90, 0, true);
+        path.LineTo(width, height - r);
+        path.AddArc(width- 2 * r, height - 2 * r, width, height, 0, 270, true);
+        path.LineTo(x0 + r, height);
+        path.AddArc(x0, height- 2 * r, x0 + 2 * r, height, 270, 180, true);
+        path.LineTo(x0, y0 + r);
+        path.AddArc(x0, y0, x0 + 2 * r, y0 + 2 * r, 180, 90, true);
+        path.Close();
         canvas.DrawPath(path);
     }
     
