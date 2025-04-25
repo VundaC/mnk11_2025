@@ -14,11 +14,6 @@
                       ContentTemplate="{DataTemplate views:MainPage}"
                       Route="MainPage" />
 
-        <ShellContent Title="One"
-                      Icon="home.png"
-                      ContentTemplate="{DataTemplate local:MainPage}"
-                      Route="OnePage" />
-
         <ShellContent Title="Me"
                       Icon="profile.png"
                       ContentTemplate="{DataTemplate views:MePage}"
@@ -28,11 +23,5 @@
                       Icon="settings.png"
                       ContentTemplate="{DataTemplate views:SettingsPage}"
                       Route="settings" />
-
-
-        <ShellContent Title="Four"
-                      Icon="unknown.png"
-                      ContentTemplate="{DataTemplate local:MainPage}"
-                      Route="FourPage" />
     </TabBar>
 </Shell>

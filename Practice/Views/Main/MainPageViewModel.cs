@@ -8,12 +8,7 @@ namespace Practice.Views
 {
     public partial class MainPageViewModel : BaseViewModel
     {
-        private string _randomNumber;
-        public string RandomNumber
-        {
-            get => _randomNumber;
-            set => SetProperty(ref _randomNumber, value);
-        }
+        private 
 
         public ICommand RandomCommand { get; }
 
