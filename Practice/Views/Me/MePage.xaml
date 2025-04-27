@@ -5,12 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Practice.Views"
+             xmlns:controls="clr-namespace:Practice.Controls"
              mc:Ignorable="d"
              x:DataType="local:MePageViewModel">
+    <ContentPage.Resources>
+        <controls:RoundCircleRect x:Key="roundCircleReact"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
+        
         <VerticalStackLayout Padding="30,0"
                              Spacing="25"
                              VerticalOptions="Center">
+            <GraphicsView Drawable="{StaticResource roundCircleReact}"
+                          HeightRequest="200"
+                          WidthRequest="200" />
             <Grid HorizontalOptions="Center"
                   RowSpacing="20"
                   ColumnSpacing="20">
