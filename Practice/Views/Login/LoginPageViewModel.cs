@@ -4,10 +4,10 @@ using System.Windows.Input;
 
 namespace Practice.Views
 {
-    public class LoginPageViewModel : BaseViewModel
+    public partial class LoginPageViewModel : BaseViewModel
     {
       
-        public ICommand LoginCommand { get; }
+       
         private readonly INavigationService _navigationService;
         private readonly IDialogService _dialogService;
         private readonly Dictionary<string, string> _users = new()
@@ -34,13 +34,14 @@ namespace Practice.Views
         {
             _navigationService = navigationService;
             _dialogService = dialogService;
-            LoginCommand = new AsyncRelayCommand(Login);
+        
             #if DEBUG
             Username = "Class";
             Password = "secret1";
             #endif
         }
 
+        [RelayCommand]
         private async Task Login()
         {
             var window = Application.Current?.Windows.FirstOrDefault();

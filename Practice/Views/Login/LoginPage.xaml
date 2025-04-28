@@ -6,23 +6,26 @@
              x:Class="Practice.Views.LoginPage"
              Title="LoginPage"
              xmlns:local="clr-namespace:Practice.Views"
-             x:DataType="local:LoginPageViewModel"
-             BackgroundImageSource="https://img.freepik.com/premium-vector/abstract-modern-gradient-background-with-wavy-lines_745217-146.jpg?w=996">
-    <VerticalStackLayout Padding="30" Spacing="20"
+             x:DataType="local:LoginPageViewModel">
+    <Grid>
+        <Image Source="https://img.freepik.com/premium-vector/abstract-modern-gradient-background-with-wavy-lines_745217-146.jpg?w=996"
+               Aspect="AspectFill"  
+               IsEnabled="False" />
+        <VerticalStackLayout Padding="30" Spacing="20"
                          VerticalOptions="Center"
                          HorizontalOptions="Center">
 
-        <Label Text="Login"
+            <Label Text="Login"
                FontSize="32"
                HorizontalOptions="Center"
                TextColor="White" />
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <controls:PaddingEntry Grid.Column="0"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <controls:PaddingEntry Grid.Column="0"
                                    Grid.ColumnSpan="2"
                                    Text="{Binding Username}"
                                    Placeholder="Username"
@@ -31,19 +34,19 @@
                                    BackgroundColor="#5e4b8b"
                                    Margin="0,10"
                                    HeightRequest="50" />
-            <Image Grid.Column="0"
+                <Image Grid.Column="0"
                    Source="person.png"
                    Margin="8"
                    VerticalOptions="Center" />
-        </Grid>
+            </Grid>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <controls:PaddingEntry Grid.Column="0"
+                <controls:PaddingEntry Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Text="{Binding Password}"
                    Placeholder="Password"
@@ -52,31 +55,32 @@
                    TextColor="White"
                    HeightRequest="50"
                    IsPassword="True" />
-            
-            <Image Source="password.png"
+
+                <Image Source="password.png"
                    Grid.Column="0"
                    Margin="8"
                    VerticalOptions="Center" />
-        </Grid>
+            </Grid>
 
 
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center">
-            <CheckBox x:Name="RememberMeCheckBox" Color="White" />
-            <Label Text="Remember Me"
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center">
+                <CheckBox x:Name="RememberMeCheckBox" Color="White" />
+                <Label Text="Remember Me"
                    VerticalOptions="Center"
                    TextColor="White"
                    Margin="5,0,20,0" />
-            <Label Text="Forget Me ?"
+                <Label Text="Forget Me ?"
                    VerticalOptions="Center"
                    TextColor="White"
                    HorizontalOptions="End" />
-        </StackLayout>
+            </StackLayout>
 
-        <Button Text="Login"
+            <Button Text="Login"
                 BackgroundColor="#b5179e"
                 TextColor="White"
                 HeightRequest="50"
                 CornerRadius="25"
                 Command="{Binding LoginCommand}" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>
