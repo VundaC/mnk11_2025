@@ -43,7 +43,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Entry Grid.Column="0"
+            <controls:PaddingEntry Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Text="{Binding Password}"
                    Placeholder="Password"
@@ -52,6 +52,7 @@
                    TextColor="White"
                    HeightRequest="50"
                    IsPassword="True" />
+            
             <Image Source="password.png"
                    Grid.Column="0"
                    Margin="8"
