@@ -1,15 +1,20 @@
 ﻿#nullable enable
+using Practice.Views;
+
 namespace Practice;
 
 public partial class App : Application
 {
-    public App()
+    private readonly IServiceProvider _serviceProvider;
+    public App(IServiceProvider serviceProvider)
     {
+        _serviceProvider = serviceProvider;
         InitializeComponent();
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new AppShell());
+        var loginPage = _serviceProvider.GetRequiredService<LoginPage>();
+        return new Window(loginPage);
     }
 }

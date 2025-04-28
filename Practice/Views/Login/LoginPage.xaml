@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Practice.Controls"
+             x:Class="Practice.Views.LoginPage"
+             Title="LoginPage"
+             xmlns:local="clr-namespace:Practice.Views"
+             x:DataType="local:LoginPageViewModel">
+    <Grid>
+        <Image Source="https://img.freepik.com/premium-vector/abstract-modern-gradient-background-with-wavy-lines_745217-146.jpg?w=996"
+               Aspect="AspectFill"  
+               IsEnabled="False" />
+        <VerticalStackLayout Padding="30" Spacing="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+
+            <Label Text="Login"
+               FontSize="32"
+               HorizontalOptions="Center"
+               TextColor="White" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <controls:PaddingEntry Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Text="{Binding Username}"
+                                   Placeholder="Username"
+                                   PlaceholderColor="LightGray"
+                                   TextColor="White"
+                                   BackgroundColor="#5e4b8b"
+                                   Margin="0,10"
+                                   HeightRequest="50" />
+                <Image Grid.Column="0"
+                   Source="person.png"
+                   Margin="8"
+                   VerticalOptions="Center" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <controls:PaddingEntry Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding Password}"
+                   Placeholder="Password"
+                   PlaceholderColor="LightGray"
+                   BackgroundColor="#5e4b8b"
+                   TextColor="White"
+                   HeightRequest="50"
+                   IsPassword="True" />
+
+                <Image Source="password.png"
+                   Grid.Column="0"
+                   Margin="8"
+                   VerticalOptions="Center" />
+            </Grid>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center">
+                <CheckBox x:Name="RememberMeCheckBox" Color="White" />
+                <Label Text="Remember Me"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   Margin="5,0,20,0" />
+                <Label Text="Forget Me ?"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   HorizontalOptions="End" />
+            </StackLayout>
+
+            <Button Text="Login"
+                BackgroundColor="#b5179e"
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="25"
+                Command="{Binding LoginCommand}" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
