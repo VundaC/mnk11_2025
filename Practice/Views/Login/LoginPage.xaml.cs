@@ -1,0 +1,14 @@
+using Microsoft.Maui.Handlers;
+using Microsoft.Maui.Platform;
+
+namespace Practice.Views
+{
+    public partial class LoginPage : ContentPage
+    {
+        public LoginPage(LoginPageViewModel viewModel)
+        {
+            InitializeComponent();
+            BindingContext = viewModel;
+        }
+    }
+}
